@@ -2,7 +2,6 @@ import express from "express";
 import routes from "./routes";
 import helmet from "helmet";
 import log from "./utils/logger";
-import { appointments, doctors } from "./data";
 
 const app = express();
 const port = 4200;
