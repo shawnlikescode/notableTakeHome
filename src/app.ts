@@ -14,5 +14,4 @@ routes(app);
 
 app.listen(port, () => {
   log.info(`Server is listening on port http://localhost:${port}`);
-  log.info({ doctors, appointments });
 });
