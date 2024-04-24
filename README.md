@@ -13,3 +13,8 @@ bun run dev
 ```
 
 This project was created using `bun init` in bun v1.1.4. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+
+
+## Notes
+
+I also added a Postman collection for easier testing.
