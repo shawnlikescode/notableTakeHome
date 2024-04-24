@@ -7,6 +7,14 @@ import log from "../utils/logger";
 
 export function findAppointmentByDoctor(req: Request<{ doctorId: string }>, res: Response) {
   const { doctorId } = req.params;
+
+  const doctorExist = doctors.find((d) => d.id === doctorId);
+
+  if (!doctorExist) {
+    log.error("Doctor not found");
+    return res.status(400).json({ message: "Doctor does not exist" });
+  }
+
   const filteredAppointments = appointments.filter((a) => a.doctorId === doctorId);
   res.json(filteredAppointments);
 }

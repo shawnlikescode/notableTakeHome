@@ -19,4 +19,22 @@ export const createAppointmentSchema = z.object({
   }),
 });
 
+export const deleteAppointmentSchema = z.object({
+  params: z.object({
+    appointmentId: z.string({ required_error: "Appointment ID is required" }),
+  }),
+});
+
+export const findAppointmentByDateSchema = z.object({
+  params: z.object({
+    date: z.string({ required_error: "Date is required" }).date("Date must be in YYYY-MM-DD format"),
+  }),
+});
+
+export const findAppointmentByDoctorSchema = z.object({
+  params: z.object({
+    doctorId: z.string({ required_error: "Doctor ID is required" }),
+  }),
+});
+
 export type CreateAppointmentInput = z.infer<typeof createAppointmentSchema>;

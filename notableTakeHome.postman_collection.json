@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "f387e330-7d52-42ba-9420-0ba0d55f7fb5",
+		"name": "notableTakeHome",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11311095",
+		"_collection_link": "https://martian-astronaut-927432.postman.co/workspace/My-Workspace~75c1c585-ee7d-44ff-8806-e8745fea19c3/collection/11311095-f387e330-7d52-42ba-9420-0ba0d55f7fb5?action=share&source=collection_link&creator=11311095"
+	},
+	"item": [
+		{
+			"name": "Get Appointment By Doctor",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4200/appointments/doctor/:doctorId",
+					"host": [
+						"localhost"
+					],
+					"port": "4200",
+					"path": [
+						"appointments",
+						"doctor",
+						":doctorId"
+					],
+					"variable": [
+						{
+							"key": "doctorId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Appointment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"doctorId\": \"5FDsFyMSxQyp-11IHYpPd\",\n  \"patientFirstName\": \"Shawn\",\n  \"patientLastName\": \"John\",\n  \"date\": \"2024-05-01\",\n  \"time\": \"14:45:00\",\n  \"kind\": \"New Patient\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4200/appointments",
+					"host": [
+						"localhost"
+					],
+					"port": "4200",
+					"path": [
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Appointment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:4200/appointments/delete/:appointmentId",
+					"host": [
+						"localhost"
+					],
+					"port": "4200",
+					"path": [
+						"appointments",
+						"delete",
+						":appointmentId"
+					],
+					"variable": [
+						{
+							"key": "appointmentId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Appointment By Day",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4200/appointments/day/:date",
+					"host": [
+						"localhost"
+					],
+					"port": "4200",
+					"path": [
+						"appointments",
+						"day",
+						":date"
+					],
+					"variable": [
+						{
+							"key": "date",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Doctors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4200/doctors",
+					"host": [
+						"localhost"
+					],
+					"port": "4200",
+					"path": [
+						"doctors"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

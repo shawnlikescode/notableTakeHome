@@ -1,6 +1,11 @@
 import type { Express } from "express";
 import validate from "./middleware/validate";
-import { createAppointmentSchema } from "./schema";
+import {
+  createAppointmentSchema,
+  deleteAppointmentSchema,
+  findAppointmentByDateSchema,
+  findAppointmentByDoctorSchema,
+} from "./schema";
 import {
   createAppointment,
   deleteAppointment,
@@ -12,13 +17,13 @@ import { getDoctors } from "./doctors/doctors.controller";
 function routes(app: Express) {
   app.get("/doctors", getDoctors);
 
-  app.get("/appointments/doctor/:doctorId/", findAppointmentByDoctor);
+  app.get("/appointments/doctor/:doctorId/", validate(findAppointmentByDoctorSchema), findAppointmentByDoctor);
 
-  app.get("/appointments/day/:date/", findAppointmentByDate);
+  app.get("/appointments/day/:date/", validate(findAppointmentByDateSchema), findAppointmentByDate);
 
   app.post("/appointments", validate(createAppointmentSchema), createAppointment);
 
-  app.delete("/appointments/:appointmentId", deleteAppointment);
+  app.delete("/appointments/delete/:appointmentId", validate(deleteAppointmentSchema), deleteAppointment);
 }
 
 export default routes;
